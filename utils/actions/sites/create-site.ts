@@ -53,6 +53,8 @@ export const createSites = async (
     }
   );
 
+  
+
   try {
     const { data, error } = await supabase
       .from("sites")
@@ -66,6 +68,9 @@ export const createSites = async (
         },
       ])
       .select();
+
+      console.log(error);
+      
     if (error?.code) {
       return {
         error,
